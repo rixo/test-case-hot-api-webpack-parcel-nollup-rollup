@@ -1,0 +1,22 @@
+{
+  "name": "test-case-hot-api-webpack-parcel-nollup-rollup",
+  "version": "0.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "nollup": "^0.8.4",
+    "parcel": "^1.12.4",
+    "rollup": "^1.26.5",
+    "rollup-plugin-hot": "^0.0.4-0",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-static-files": "^0.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "start:rollup": "rollup -c -w",
+    "start:nollup": "nollup -c -w",
+    "start:parcel": "parcel src/index.html",
+    "start:webpack": "webpack-dev-server"
+  }
+}
