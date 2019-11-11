@@ -177,7 +177,7 @@ b.js: a UPDATED
 accept b.js a UPDATED
 dispose c.js
 c.js: a UPDATED
-c.js:20 accept c.js a UPDATED
+accept c.js a UPDATED
 [HMR] Up to date
 main.js: b(a UPDATED) c(a UPDATED)
 ~~~
