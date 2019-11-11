@@ -32,20 +32,25 @@ Appreciate differences between each methods.
 | ---------------- |:-------:|:------:|:------:|:------------:|
 | **Dispose**      |         |        |        |              |
 | Run dispose A    | yes     | yes    | yes    | yes          |
-| Run dispose B    | yes     | yes    | no     | yes          |
-| Run dispose C    | yes     | no     | no     | yes          |
+| Run dispose B    | yes     | yes    | **no** | yes          |
+| Run dispose C    | yes     | **no** | **no** | yes          |
 | Run dispose main | no      | no     | no     | no           |
 | **Accept**       |         |        |        |              |
 | Run accept B     | no      | yes    | yes    | yes          |
-| Run accept C     | no      | no     | no     | yes          |
+| Run accept C     | no      | **no** | **no** | yes          |
 | **Rerun**        |         |        |        |              |
 | Rerun A          | yes     | yes    | yes    | yes          |
 | Rerun B          | yes     | yes    | yes    | yes          |
-| Rerun C          | yes     | no     | no     | yes          |
+| Rerun C          | yes     | **no** | **no** | yes          |
+| Rerun main       | no      | no     | no     | no           |
 | **Rebind**       |         |        |        |              |
 | Rebind B         | yes     | yes    | yes    | yes          |
 | Rebind C         | yes     | no     | no     | yes          |
-| Rebind main      | no      | no     | no     | yes          |
+| Rebind main      | **no**  | **no** | **no** | yes          |
+
+**In bold:** This goes against my own expectations.
+
+Last column is using my WIP [rollup-plugin-hot](https://github.com/rixo/rollup-plugin-hot). It leverages [SystemJS](https://github.com/systemjs/systemjs) as a module loader and uses [WIP SystemJS reload extra](https://github.com/systemjs/systemjs/pull/2014). It's SystemJS and the linked PR that implement update of modules' bindings.
 
 ### Webpack
 
@@ -56,6 +61,7 @@ Launch:
 a.js := a
 b.js: a
 c.js: a
+main.js
 [WDS] Hot Module Replacement enabled.
 [WDS] Live Reloading enabled.
 ... (unrelated compilation warning ignored)
@@ -91,6 +97,7 @@ Launch:
 a.js := a
 b.js: a
 c.js: a
+main.js
 main.js: b(a) c(a)
 ~~~
 
@@ -113,6 +120,7 @@ Launch:
 a.js := a
 b.js: a
 c.js: a
+main.js
 main.js: b(a) c(a)
 ~~~
 
@@ -135,6 +143,7 @@ Launch:
 a.js := a
 b.js: a
 c.js: a
+main.js
 main.js: b(a) c(a)
 ~~~
 
