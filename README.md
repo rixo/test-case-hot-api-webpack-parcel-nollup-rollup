@@ -26,6 +26,25 @@ Change the constant value in `src/a.js`.
 
 Appreciate differences between each methods.
 
+## Conditions
+
+Modules topology:
+
+- `main` imports `b` and `c`
+- `b` and `c` both import `a`
+
+~~~
+     |-> b (accept) -> |
+main |                 | a (changes)
+     |-> c (accept) -> |
+~~~
+
+Only modules `b` and `c` have an accept handler.
+
+All modules have a dispose handler.
+
+A change happens in module `a`.
+
 ## Results
 
 | Does?            | Webpack | Parcel | Nollup | Rollup + Hot |
