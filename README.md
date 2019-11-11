@@ -190,6 +190,7 @@ Launch:
 a.js := a
 b.js: a
 c.js: a
+main.js
 main.js: b(a) c(a)
 ~~~
 
