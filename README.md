@@ -64,7 +64,7 @@ A change happens in module `a`.
 | Rerun main       | no      | no     | no     | no           |
 | **Rebind**       |         |        |        |              |
 | Rebind B         | yes     | yes    | yes    | yes          |
-| Rebind C         | yes     | no     | no     | yes          |
+| Rebind C         | yes     | **no** | **no** | yes          |
 | Rebind main      | **no**  | **no** | **no** | yes          |
 
 **In bold:** This goes against my own expectations.
