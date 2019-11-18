@@ -51,21 +51,21 @@ A change happens in module `a`.
 | ---------------- |:-------:|:------:|:------:|:------------:|
 | **Dispose**      |         |        |        |              |
 | Run dispose A    | yes     | yes    | yes    | yes          |
-| Run dispose B    | yes     | yes    | **no** | yes          |
-| Run dispose C    | yes     | **no** | **no** | yes          |
+| Run dispose B    | yes     | yes    | yes    | yes          |
+| Run dispose C    | yes     | **no** | yes    | yes          |
 | Run dispose main | no      | no     | no     | no           |
 | **Accept**       |         |        |        |              |
 | Run accept B     | no      | yes    | yes    | yes          |
-| Run accept C     | no      | **no** | **no** | yes          |
+| Run accept C     | no      | **no** | yes    | yes          |
 | **Rerun**        |         |        |        |              |
 | Rerun A          | yes     | yes    | yes    | yes          |
 | Rerun B          | yes     | yes    | yes    | yes          |
-| Rerun C          | yes     | **no** | **no** | yes          |
+| Rerun C          | yes     | **no** | yes    | yes          |
 | Rerun main       | no      | no     | no     | no           |
 | **Rebind**       |         |        |        |              |
 | Rebind B         | yes     | yes    | yes    | yes          |
-| Rebind C         | yes     | **no** | **no** | yes          |
-| Rebind main      | **no**  | **no** | **no** | yes          |
+| Rebind C         | yes     | **no** | yes    | yes          |
+| Rebind main      | **no**  | **no** | yes    | yes          |
 
 **In bold:** This goes against my own expectations.
 
@@ -147,10 +147,14 @@ After changing `a.js`:
 
 ~~~
 dispose a
+dispose b.js
+dispose c.js
 accept b.js a
-a.js := a UPDATED
-b.js: a UPDATED
-main.js: b(a) c(a)
+a.js := ax
+b.js: ax
+accept c.js ax
+c.js: ax
+main.js: b(ax) c(ax)
 ~~~
 
 ### Rollup Hot
