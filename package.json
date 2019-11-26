@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "devDependencies": {
-    "nollup": "PepsRyuu/nollup#HMRAlignment",
+    "nollup": "^0.9.0",
     "parcel": "^1.12.4",
     "rollup": "^1.26.5",
     "rollup-plugin-hot": "^0.0.4-0",
