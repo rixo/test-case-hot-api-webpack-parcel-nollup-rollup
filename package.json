@@ -15,8 +15,6 @@
   },
   "scripts": {
     "start:rollup": "rollup -c -w",
-    "start:nollup": "nollup -c -w",
-    "start:parcel": "parcel src/index.html",
-    "start:webpack": "webpack-dev-server"
+    "start:nollup": "nollup -c -w"
   }
 }

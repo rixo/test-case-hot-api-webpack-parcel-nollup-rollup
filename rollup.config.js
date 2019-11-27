@@ -16,10 +16,16 @@ const plugins = NOLLUP
 
 export default {
   input: './src/main.js',
-  output: {
-    sourcemap: 'inline',
-    file: 'public/build/main.js',
-    entryFileNames: 'public/build',
-  },
+  output: [
+    {
+      // works with Rollup:
+      file: 'public/build/bundle.js',
+    },
+    {
+      // also works with Rollup:
+      dir: 'public/build',
+      entryFileNames: 'build/shared.js',
+    },
+  ],
   plugins,
 }
